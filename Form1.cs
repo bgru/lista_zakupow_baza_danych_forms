@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LISTA_ZAK_BAZA_DANYCH
+namespace LISTA_ZAK_BAZA_DANYCH 
 {
     public partial class Form1 : Form
     {

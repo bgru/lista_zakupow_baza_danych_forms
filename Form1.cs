@@ -13,7 +13,8 @@ namespace LISTA_ZAK_BAZA_DANYCH
     public partial class Form1 : Form
     {
         Product_DBDataContext db_dc;
-
+        // the database .mdf file can be downloaded from my OneDrive with this link:
+        // https://uniwersytetlodzki-my.sharepoint.com/:f:/g/personal/ul0266158_edu_uni_lodz_pl/Eq2KV4_OQRpNqdPGhZy6ZcwB6eVjxq4e1nnqdICku8n0Ug?e=PBPaG5
 
         public Form1()
         {

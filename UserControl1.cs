@@ -89,6 +89,8 @@ namespace LISTA_ZAK_BAZA_DANYCH
                 }
             }
 
+            ValueChanged?.Invoke(this, -(Iloczyn_NumericUD.Value));
+
             if(this.Parent != null)
             {
                 this.Parent.Controls.Remove(this);
@@ -110,12 +112,22 @@ namespace LISTA_ZAK_BAZA_DANYCH
             Multiply();
         }
 
-
+        public delegate void IloczynValueChangedEvent(object sender, decimal newVal);
+        public event IloczynValueChangedEvent ValueChanged;
 
 
         decimal previousValue = 0;
         private void Iloczyn_NumericUD_ValueChanged(object sender, EventArgs e)
         {
+            if(previousValue > Iloczyn_NumericUD.Value)
+            {
+                ValueChanged?.Invoke(this, -(previousValue - Iloczyn_NumericUD.Value));
+            }
+            else
+            {
+                ValueChanged?.Invoke(this, (Iloczyn_NumericUD.Value - previousValue));
+            }
+            previousValue = Iloczyn_NumericUD.Value;
 
         }
     }

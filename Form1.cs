@@ -25,7 +25,9 @@ namespace LISTA_ZAK_BAZA_DANYCH
             {
                 ProductControl sc = new ProductControl(db_dc);
                 sc.iniValues(i.Name, (int)i.Quantity, (decimal)i.Price, i.Id);
+                sc.ValueChanged += UserControl_ValueChanged;
                 FlowPanel.Controls.Add(sc);
+                Suma_NumericUD.Value += ((int)i.Quantity * (decimal)i.Price);
             }
 
 
@@ -54,6 +56,7 @@ namespace LISTA_ZAK_BAZA_DANYCH
             }
 
             ProductControl sc = new ProductControl(db_dc);
+            sc.ValueChanged += UserControl_ValueChanged;
             sc.Product_ID = newProduct.Id;
             FlowPanel.Controls.Add(sc);
             
@@ -75,6 +78,12 @@ namespace LISTA_ZAK_BAZA_DANYCH
             // Save all changes to the database
             db_dc.SubmitChanges();
         }
+
+        private void UserControl_ValueChanged(object sender, decimal newVal)
+        {
+            Suma_NumericUD.Value += newVal;
+        }
+
 
     }
 }

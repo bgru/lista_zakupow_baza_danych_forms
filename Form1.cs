@@ -15,6 +15,11 @@ namespace LISTA_ZAK_BAZA_DANYCH
         Product_DBDataContext db_dc;
         // the database .mdf file can be downloaded from my OneDrive with this link:
         // https://uniwersytetlodzki-my.sharepoint.com/:f:/g/personal/ul0266158_edu_uni_lodz_pl/Eq2KV4_OQRpNqdPGhZy6ZcwB6eVjxq4e1nnqdICku8n0Ug?e=PBPaG5
+        
+        // VERY IMPORTANT: 
+        // In Sollution explorer locate product_BD.mdf,
+        // go to it's properties (right click -> properties) and change
+        // Copy Output Directory to "Copy if newer" !!! It will not work otherwise!
 
         public Form1()
         {
